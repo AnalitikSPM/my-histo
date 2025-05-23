@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  </head>
+  <body>
+    <canvas id="histogramChart"></canvas>
+    <script>
+      function drawViz(data, config) {
+        const ctx = document.getElementById('histogramChart').getContext('2d');
+        const labels = data.tables.DEFAULT.map(row => row.dimensions[0]);
+        const values = data.tables.DEFAULT.map(row => row.metrics[0]);
+
+        new Chart(ctx, {
+          type: 'bar',
+          data: {
+            labels: labels,
+            datasets: [{
+              label: 'Значения',
+              data: values,
+              borderWidth: 1,
+              backgroundColor: 'rgba(54, 162, 235, 0.5)'
+            }]
+          },
+          options: {
+            scales: {
+              y: {
+                beginAtZero: true
+              }
+            }
+          }
+        });
+      }
+    </script>
+  </body>
+</html>

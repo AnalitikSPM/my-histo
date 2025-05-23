@@ -1,0 +1,12 @@
+{
+  "dataStudio": {
+    "name": "Custom Histogram",
+    "description": "A custom histogram visualization",
+    "id": "custom-histogram",
+    "company": "YourCompany",
+    "supportUrl": "https://yourcompany.com/support",
+    "templates": {
+      "default": "index.html"
+    }
+  }
+}
